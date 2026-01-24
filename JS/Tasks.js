@@ -7,16 +7,25 @@ const task = {
 }
 
 // Empty list to add tasks
-const tasks = []
+let tasks = []
 
-const formEvent = document.getElementById("addForm")
+const formEvent = document.getElementById("addForm");
 
 // Add function
-formEvent.addEventListener("submit", function addTask() {
-    const name = document.getElementById("taskName");
-    const description = document.getElementById("description");
+formEvent.addEventListener("submit", function (addTask) {
+
+    addTask.preventDefault();
+
+    console.log("estoy dentro")
+
+    const name = document.getElementById("taskName").value;
+    const description = document.getElementById("description").value;
 
     // add to array
     tasks.push(name, description)
+
+    console.log(tasks)
+
+    return tasks
 
 })
